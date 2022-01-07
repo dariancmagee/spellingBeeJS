@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //using an IIFE, load the letter button
-//Why did I put the letters in the IFFE??  HINT: LOOK AT THE CONSOLE LOG AND SEE WHEN IT FIRES.
+//Why did I put the letters in the IFFE??  HINT: LOOK AT THE CONSOLE Log AND SEE WHEN IT FIRES.
 (() => {
     setTimeout(() => {
         loadingBeeDIV.classList.toggle("hide");
@@ -118,7 +118,26 @@ f_button.addEventListener("click", (event) => {
     console.log(clickedLetter, "button clicked");
 });
 
+
 //add a function to take your word from the word div and add it to an Array to then add to your Words Bank
 
+const wordsBankArray = [];
+let wordCount = 0;
 
+foundTitle.innerHTML = `You have found ${wordCount} words!`;
+wordsBankDIV.appendChild(foundTitle);
 
+addButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    wordsBankArray.push(wordDIV.innerHTML);
+    console.log("wordsBankArray", wordsBankArray);
+
+    let newWordDiv = document.createElement("div");
+        newWordDiv.setAttribute('id', `${wordCount}`);
+        newWordDiv.classList.add("is-size-2");
+        newWordDiv.innerHTML = wordsBankArray[wordCount];
+        wordsBankDIV.appendChild(newWordDiv);
+        wordCount++;
+        foundTitle.innerHTML = `You have found ${wordCount} words!`;
+        wordDIV.innerHTML = "";
+});
