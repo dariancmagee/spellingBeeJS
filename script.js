@@ -45,6 +45,7 @@ f_button.innerHTML = "F";
 
 const addButton = document.createElement('div');
 addButton.classList.add("button", "is-black");
+addButton.innerHTML = "ADD";
 
 //write the function to add the buttons to your HTML on page load
 //** NOTE: setTimeout is just to slow the load so you can see it. but you could use it to add a CSS loaders and other neat stuff!! :)
@@ -73,7 +74,49 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 //Step-3 write the listeners to take a letter and add to your word div
+let clickedLetter = '';
 
+a_button.addEventListener("click", (event) => {
+    event.preventDefault();
+    clickedLetter = a_button.value;
+    wordDIV.innerHTML += clickedLetter;
+    console.log(clickedLetter, "button clicked");
+});
+
+b_button.addEventListener("click", (event) => {
+    event.preventDefault();
+    clickedLetter = b_button.value;
+    wordDIV.innerHTML += clickedLetter;
+    console.log(clickedLetter, "button clicked");
+});
+
+c_button.addEventListener("click", (event) => {
+    event.preventDefault();
+    clickedLetter = c_button.value;
+    wordDIV.innerHTML += clickedLetter;
+    console.log(clickedLetter, "button clicked");
+});
+
+d_button.addEventListener("click", (event) => {
+    event.preventDefault();
+    clickedLetter = d_button.value;
+    wordDIV.innerHTML += clickedLetter;
+    console.log(clickedLetter, "button clicked");
+});
+
+e_button.addEventListener("click", (event) => {
+    event.preventDefault();
+    clickedLetter = e_button.value;
+    wordDIV.innerHTML += clickedLetter;
+    console.log(clickedLetter, "button clicked");
+});
+
+f_button.addEventListener("click", (event) => {
+    event.preventDefault();
+    clickedLetter = f_button.value;
+    wordDIV.innerHTML += clickedLetter;
+    console.log(clickedLetter, "button clicked");
+});
 
 //add a function to take your word from the word div and add it to an Array to then add to your Words Bank
 
